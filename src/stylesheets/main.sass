@@ -1,11 +1,13 @@
-$bkgd-img: url('/images/wood-bkgd.jpg') no-repeat
+@import "compass"
+
+$bkgd-img: url('/images/repeating-wood-bkgd.jpg') repeat
 
 body, * 
   font-family: sans-serif
   // background: #000
 body
   background: $bkgd-img
-  background-size: 100%
+  // background-size: 100%
 a
   text-decoration: none
 
@@ -25,6 +27,8 @@ a
   height: 75px
   background: #03f
   padding-left: 10px
+  @include border-radius(0 4px 4px 0)
+  @include box-shadow(#000 1px 1px 1px)
   h1, h2
     display: inline
     margin: 0 10px
