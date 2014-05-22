@@ -17,7 +17,7 @@ var gulp        = require('gulp'),
     server      = tinylr();
 
 gulp.task('compass', function() {
-    gulp.src('./src/stylesheets/*.scss')
+    gulp.src('./src/stylesheets/*.{scss,sass}')
         .pipe(compass({
             css: 'dist/stylesheets',
             sass: 'src/stylesheets'
@@ -39,7 +39,7 @@ gulp.task('coffee', function() {
 });
 
 gulp.task('templates', function() {
-  return gulp.src('src/*.jade')
+  return gulp.src('src/{,*/}*{,*/}*.jade')
     .pipe(jade({
       pretty: true
     }))
@@ -59,11 +59,11 @@ gulp.task('watch', function () {
       return console.log(err);
     }
 
-    gulp.watch('src/stylesheets/*.scss',['compass']);
+    gulp.watch('src/stylesheets/*.{sass, scss}',['compass']);
 
     gulp.watch('src/scripts/*.coffee',['coffee']);
 
-    gulp.watch('src/*.jade',['templates']);
+    gulp.watch('src//{,*/}*{,*/}*.jade',['templates']);
     
   });
 });
