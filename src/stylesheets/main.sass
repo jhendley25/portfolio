@@ -5,7 +5,7 @@
 //http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32
 $bkgd-img: url('/images/repeating-wood-bkgd.jpg') repeat
 $break-small: 400px 
-$break-headings: 700px 
+$break-medium: 700px 
 $break-ipad: 768px
 $break-large: 1024px
 
@@ -13,8 +13,8 @@ $break-large: 1024px
   @if $media == handhelds
     @media only screen and (max-width: $break-small)  
       @content
-  @if $media == headings
-    @media only screen and (max-width: $break-headings)  
+  @if $media == medium
+    @media only screen and (max-width: $break-medium)  
       @content
   @if $media == ipad 
     @media only screen and (max-width: $break-ipad) 
@@ -41,6 +41,7 @@ a
 .super-stage
   height: 70%
   width: 90%
+  max-width: 1080px
   margin-top: 115px
   margin-left: 5%
   background: #000
@@ -53,19 +54,22 @@ a
     right: 10px
     top: 10px
     bottom: 10px
-  .title-holder,   .landing-page-subtitle-holder
+    padding-top: 15px
+  .title-holder, .landing-page-subtitle-holder
     width: 100%
     height: auto
     // border: 1px solid black
     .title
       font-size: 60px
-      @include respond-to(headings)
+      @include respond-to(medium)
         font-size: 30px
       text-align: center
+      margin-bottom: 15px
     .landing-page-subtitle
       font-size: 25px
       text-align: center
   .landing-page-links
+    margin-top: 20px
     font-size: 25px
     width: 100%
     text-align: center
@@ -102,15 +106,27 @@ a
 .active
   display: block
 
+.about-container
+  .about-content
+    font-size: 25px
+    text-align: center
+
 .work-container
   .work-showcase
     @include box-shadow(#000 1px 1px 1px)
     padding: 5px
     position: relative
-    height: 120px
+    // height: auto
+    height: 80px
+    @include respond-to(medium)
+      height: 120px
+    @include respond-to(handhelds)
+      height: auto
     .work-title
       width: 30%
       height: 100%
+      h1
+        margin-bottom: 15px
       position: relative
       display: inline-block
       // border: 1px solid blue
@@ -124,7 +140,7 @@ a
 
     .work-desc
       vertical-align: top
-      width: 69%
+      width: 65%
       height: 100%
       position: relative
       left: 0
@@ -133,12 +149,13 @@ a
       @include respond-to(handhelds)
         width: 100%
         height: auto
-  .github-ribbon
-    @include ribbon
+  // .github-ribbon
+  //   @include ribbon
     // @include 
     
 .footer-container
   width: 100%
+  max-width: 1080px
   // border: 1px solid white
   height: 60px
   position: absolute
