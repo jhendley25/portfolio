@@ -1,6 +1,22 @@
 @import "compass"
-
+//crazy awesome media query stuff
+//thanks to the sass way
+//http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32
 $bkgd-img: url('/images/repeating-wood-bkgd.jpg') repeat
+$break-small: 700px //modify these with proper sizes
+$break-ipad: 768px
+$break-large: 1024px
+
+@mixin respond-to($media)
+  @if $media == handhelds
+    @media only screen and (max-width: $break-small)  
+      @content
+  @if $media == ipad 
+    @media only screen and (max-width: $break-ipad) 
+      @content
+  @else if $media == medium-screens 
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) 
+      @content
 
 body, * 
   font-family: sans-serif
@@ -12,7 +28,7 @@ body
   // background-size: 100%
 a
   text-decoration: none
-  text-shadow: 2px 2px #000
+  
 .wrapper 
   width: 960px
   margin: 0 auto
@@ -25,6 +41,7 @@ a
   background: #000
   position: relative
   .stage
+    overflow: scroll
     background: #fff
     position: absolute
     left: 10px
@@ -33,14 +50,20 @@ a
     bottom: 10px
   .landing-page-title-holder,   .landing-page-subtitle-holder
     width: 100%
-    height: 100px
-    border: 1px solid black
+    height: auto
+    // border: 1px solid black
     .landing-page-title
-      font-size: 40px
+      font-size: 60px
+      @include respond-to(handhelds)
+        font-size: 30px
       text-align: center
     .landing-page-subtitle
       font-size: 25px
       text-align: center
+  .landing-page-links
+    font-size: 25px
+    width: 100%
+    text-align: center
 
 
 .header
@@ -53,6 +76,8 @@ a
   padding-left: 10px
   @include border-radius(0 4px 4px 0)
   @include box-shadow(#000 1px 1px 1px)
+  a
+    text-shadow: 2px 2px #000
   h1, h2
     display: inline
     margin: 0 10px
@@ -71,3 +96,7 @@ a
   display: none
 .active
   display: block
+
+
+
+
