@@ -21,7 +21,3 @@ module.exports = Backbone.Router.extend
     console.log 'work'
     $(".section").removeClass("active")
     $(".work-container").addClass("active")
-  contact: ->
-    console.log 'contact'
-    $(".section").removeClass("active")
-    $(".contact-container").addClass("active")
