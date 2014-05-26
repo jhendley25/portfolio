@@ -37,11 +37,11 @@ a
 .wrapper 
   width: 960px
   margin: 0 auto
-  border: 1px solid #ccc
+  // border: 1px solid #ccc
 .super-stage
-  height: 400px
+  height: 70%
   width: 90%
-  margin-top: 100px
+  margin-top: 115px
   margin-left: 5%
   background: #000
   position: fixed
@@ -113,7 +113,7 @@ a
       height: 100%
       position: relative
       display: inline-block
-      border: 1px solid blue
+      // border: 1px solid blue
       @include respond-to(handhelds)
         text-align: center
         width: 100%
@@ -129,7 +129,7 @@ a
       position: relative
       left: 0
       display: inline-block
-      border: 1px solid blue
+      // border: 1px solid blue
       @include respond-to(handhelds)
         width: 100%
         height: auto
@@ -137,9 +137,27 @@ a
     @include ribbon
     // @include 
     
-
-
-
-
+.footer-container
+  width: 100%
+  // border: 1px solid white
+  height: 60px
+  position: absolute
+  left: 0
+  right: 0
+  bottom: 0
+  .footer-link-list
+    list-style-type: none
+    text-align: center
+    .footer-link
+      margin-right: 20px
+    li
+      display: inline
+      color: #ccc
+      a
+        color: #ccc
+.responsive-break
+  display: none
+  @include respond-to(handhelds)
+    display: block
 
 
