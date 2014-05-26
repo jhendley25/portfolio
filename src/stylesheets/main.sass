@@ -31,7 +31,7 @@ body, *
   margin: 0
 body
   background: $bkgd-img
-  min-height: 700px
+  // min-height: 700px
   // background-size: 100%
 a
   text-decoration: none
@@ -44,12 +44,14 @@ a
   height: 70%
   width: 90%
   max-width: 1080px
-  margin-top: 130px
+  margin-top: 150px
   margin-left: 5%
   background: $wood-frame-img
   border: 1px solid #5a5a5a
   @include box-shadow(#000 1px 1px 1px)
-  position: fixed
+  position: relative
+  bottom: 100px
+  // top: 100px
   .stage
     overflow: scroll
     background: #fff
@@ -81,7 +83,7 @@ a
 
 .header-frame
   width: 380px
-  position: fixed
+  position: relative
   left: 0
   top: 20px
   height: 95px
@@ -129,7 +131,7 @@ a
 
 .work-container
   .work-showcase
-    @include box-shadow(#000 1px 1px 1px)
+    // @include box-shadow(#000 1px 1px 1px)
     padding: 5px
     position: relative
     // height: auto
@@ -165,19 +167,18 @@ a
       @include respond-to(handhelds)
         width: 100%
         height: auto
-  // .github-ribbon
-  //   @include ribbon
-    // @include 
+  .work-example-divider
+    width: 100%
+    height: auto
+    text-align: center
     
 .footer-container
   width: 100%
   max-width: 1080px
   // border: 1px solid white
   height: 60px
-  position: absolute
-  left: 0
-  right: 0
-  bottom: 0
+  position: relative
+  top: 20px
   .footer-link-list
     list-style-type: none
     text-align: center
