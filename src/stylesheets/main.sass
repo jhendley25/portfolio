@@ -1,9 +1,10 @@
 @import "compass"
-@import "ribbon"
+// @import "ribbon"
+$bkgd-img: url('/images/repeating-wood-bkgd.jpg') repeat
+$wood-frame-img: url('/images/wood-frame-texture.jpg') repeat
 //crazy awesome media query stuff
 //thanks to the sass way
 //http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32
-$bkgd-img: url('/images/repeating-wood-bkgd.jpg') repeat
 $break-small: 400px 
 $break-medium: 700px 
 $break-ipad: 768px
@@ -44,7 +45,9 @@ a
   max-width: 1080px
   margin-top: 115px
   margin-left: 5%
-  background: #000
+  background: $wood-frame-img
+  border: 1px solid #5a5a5a
+  @include box-shadow(#000 1px 1px 1px)
   position: fixed
   .stage
     overflow: scroll
@@ -55,6 +58,7 @@ a
     top: 10px
     bottom: 10px
     padding-top: 15px
+    @include box-shadow(#000 2px 2px 1px 0 inset)
   .title-holder, .landing-page-subtitle-holder
     width: 100%
     height: auto
