@@ -1,0 +1,29 @@
+// awesome sass ribbon mixin
+$ribbon-background-color: #d7e503
+$ribbon-width: 15em
+$ribbon-ends-width: 1.5em
+$ribbon-ends-border-width: 0.9em
+
+@mixin ribbon()
+  width: $ribbon-width
+  position: relative
+  background: $ribbon-background-color
+  &:before
+    position: absolute    
+    top: $ribbon-ends-border-width
+    border: $ribbon-ends-border-width solid darken($ribbon-background-color, 15%)
+    content: ""
+    z-index: -1
+  &:before 
+    right: -$ribbon-ends-width
+    border-left-width: $ribbon-ends-width
+    border-right-color: transparent
+  span:before
+    position: absolute
+    bottom: -$ribbon-ends-border-width
+    border: $ribbon-ends-border-width solid darken($ribbon-background-color, 25%)
+    border-color: darken($ribbon-background-color, 25%) transparent transparent transparent
+    content: ""
+  span:before
+    right: 0
+    border-width: $ribbon-ends-border-width $ribbon-ends-border-width 0 0

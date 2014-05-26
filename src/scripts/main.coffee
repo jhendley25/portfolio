@@ -7,6 +7,7 @@ router = new Router()
 
 
 $ ->
+  window.testing = "please work"
   Backbone.history.start()
   console.log 'loaded!'
 

@@ -1,15 +1,20 @@
 @import "compass"
+@import "ribbon"
 //crazy awesome media query stuff
 //thanks to the sass way
 //http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32
 $bkgd-img: url('/images/repeating-wood-bkgd.jpg') repeat
-$break-small: 700px //modify these with proper sizes
+$break-small: 400px 
+$break-headings: 700px 
 $break-ipad: 768px
 $break-large: 1024px
 
 @mixin respond-to($media)
   @if $media == handhelds
     @media only screen and (max-width: $break-small)  
+      @content
+  @if $media == headings
+    @media only screen and (max-width: $break-headings)  
       @content
   @if $media == ipad 
     @media only screen and (max-width: $break-ipad) 
@@ -39,7 +44,7 @@ a
   margin-top: 100px
   margin-left: 5%
   background: #000
-  position: relative
+  position: fixed
   .stage
     overflow: scroll
     background: #fff
@@ -54,7 +59,7 @@ a
     // border: 1px solid black
     .title
       font-size: 60px
-      @include respond-to(handhelds)
+      @include respond-to(headings)
         font-size: 30px
       text-align: center
     .landing-page-subtitle
@@ -96,6 +101,44 @@ a
   display: none
 .active
   display: block
+
+.work-container
+  .work-showcase
+    @include box-shadow(#000 1px 1px 1px)
+    padding: 5px
+    position: relative
+    height: 120px
+    .work-title
+      width: 30%
+      height: 100%
+      position: relative
+      display: inline-block
+      border: 1px solid blue
+      @include respond-to(handhelds)
+        text-align: center
+        width: 100%
+        height: auto
+      .work-links
+        .link-spacer
+          margin: 0 3px
+
+    .work-desc
+      vertical-align: top
+      width: 69%
+      height: 100%
+      position: relative
+      left: 0
+      display: inline-block
+      border: 1px solid blue
+      @include respond-to(handhelds)
+        width: 100%
+        height: auto
+  .github-ribbon
+    @include ribbon
+    // @include 
+    
+
+
 
 
 
