@@ -5,7 +5,7 @@ $wood-frame-img: url('/images/wood-frame-texture.jpg') repeat
 //crazy awesome media query stuff
 //thanks to the sass way
 //http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32
-$break-small: 400px 
+$break-small: 800px 
 $break-medium: 700px 
 $break-ipad: 768px
 $break-large: 1024px
@@ -48,6 +48,8 @@ a
   @include box-shadow(#000 1px 1px 1px)
   position: relative
   bottom: 100px
+  @include respond-to(handhelds)
+    min-height: 850px
   .stage
     background: #fff
     position: absolute
