@@ -7,7 +7,6 @@ router = new Router()
 
 
 $ ->
-  window.testing = "please work"
   Backbone.history.start()
-  console.log 'loaded!'
+  console.log 'Personally I think the tech used in this portfolio outweighs the lack of true design. You be the judge. https://github.com/jhendley25/portfolio'
 

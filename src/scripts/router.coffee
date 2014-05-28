@@ -10,14 +10,11 @@ module.exports = Backbone.Router.extend
     'contact'     :     'contact'
 
   home: ->
-    console.log "we're home"
     $(".section").removeClass("active")
     $(".home-container").addClass("active")
   about: ->
-    console.log 'about'
     $(".section").removeClass("active")
     $(".about-container").addClass("active")
   work: ->
-    console.log 'work'
     $(".section").removeClass("active")
     $(".work-container").addClass("active")
