@@ -26,8 +26,6 @@ $break-large: 1024px
 
 body, * 
   font-family: 'Lato',sans-serif
-  // font-family: 'Open Sans',sans-serif
-  // background: #000
   @include box-sizing(border-box)
   margin: 0
 body
@@ -38,7 +36,6 @@ a
 .wrapper 
   width: 960px
   margin: 0 auto
-  // border: 1px solid #ccc
 .super-stage
   min-height: 500px
   height: 70%
@@ -51,9 +48,7 @@ a
   @include box-shadow(#000 1px 1px 1px)
   position: relative
   bottom: 100px
-  // top: 100px
   .stage
-    // overflow: scroll
     background: #fff
     position: absolute
     left: 10px
@@ -65,7 +60,6 @@ a
   .title-holder, .landing-page-subtitle-holder
     width: 100%
     height: auto
-    // border: 1px solid black
     .title
       font-size: 60px
       @include respond-to(medium)
@@ -139,10 +133,8 @@ a
 
 .work-container
   .work-showcase
-    // @include box-shadow(#000 1px 1px 1px)
     padding: 5px
     position: relative
-    // height: auto
     height: 80px
     @include respond-to(medium)
       height: 120px
@@ -156,7 +148,6 @@ a
       display: inline-block
       h1
         margin-bottom: 15px
-      // border: 1px solid blue
       @include respond-to(handhelds)
         margin-left: 0
         text-align: center
@@ -172,7 +163,6 @@ a
       left: 0
       display: inline-block
       padding: 0 10px
-      // border: 1px solid blue
       @include respond-to(handhelds)
         width: 100%
         height: auto
@@ -186,7 +176,6 @@ a
 .footer-container
   width: 100%
   max-width: 1080px
-  // border: 1px solid white
   height: 60px
   position: relative
   top: 20px
