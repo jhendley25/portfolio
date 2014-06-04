@@ -49,7 +49,7 @@ a
   position: relative
   bottom: 100px
   @include respond-to(handhelds)
-    min-height: 850px
+    min-height: 980px
   .stage
     background: #fff
     position: absolute
@@ -83,6 +83,9 @@ a
   left: 0
   top: 20px
   height: 95px
+  @include respond-to(handhelds)
+    height: 135px
+    width: 320px
   background: $wood-frame-img
   padding-left: 10px
   border: 1px solid #5a5a5a
@@ -95,6 +98,8 @@ a
     top: 10px
     bottom: 10px
     height: 75px
+    @include respond-to(handhelds)
+      height: 110px
     background: #275F2F
     padding-left: 10px
     @include box-shadow(#000 -2px 4px 2px -3px inset)
@@ -103,6 +108,7 @@ a
       text-shadow: 2px 2px #000
     .logo
       text-shadow: none
+
 
     h1, h2
       display: inline
